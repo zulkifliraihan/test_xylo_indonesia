@@ -43,7 +43,6 @@ class AdminRecordParkingController extends Controller
             }
         }
         catch (\Throwable $th) {
-            dd($th);
             return $this->errorCode();
         }
     }

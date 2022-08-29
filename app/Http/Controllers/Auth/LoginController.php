@@ -54,7 +54,6 @@ class LoginController extends Controller
             // End : Collecting All Request
 
             $loginInterface = $this->loginInterface->login($data);
-            // dd($loginInterface);
 
             if ($loginInterface['statusInterface'] == "failed") {
                 return $this->errorvalidator($data['messageInterface']);
