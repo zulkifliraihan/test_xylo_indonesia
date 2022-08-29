@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 29 Agu 2022 pada 05.31
+-- Waktu pembuatan: 29 Agu 2022 pada 07.00
 -- Versi server: 5.7.33
 -- Versi PHP: 7.4.24
 
@@ -139,11 +139,11 @@ CREATE TABLE `payment_methods` (
 --
 
 INSERT INTO `payment_methods` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'Gopay', '2022-08-28 05:12:38', '2022-08-28 05:12:38'),
-(2, 'OVO', '2022-08-28 05:12:38', '2022-08-28 05:12:38'),
-(3, 'Dana', '2022-08-28 05:12:38', '2022-08-28 05:12:38'),
-(4, 'E-Money', '2022-08-28 05:12:38', '2022-08-28 05:12:38'),
-(5, 'Cash', '2022-08-28 05:12:38', '2022-08-28 05:12:38');
+(1, 'Gopay', '2022-08-28 23:59:35', '2022-08-28 23:59:35'),
+(2, 'OVO', '2022-08-28 23:59:35', '2022-08-28 23:59:35'),
+(3, 'Dana', '2022-08-28 23:59:35', '2022-08-28 23:59:35'),
+(4, 'E-Money', '2022-08-28 23:59:35', '2022-08-28 23:59:35'),
+(5, 'Cash', '2022-08-28 23:59:35', '2022-08-28 23:59:35');
 
 -- --------------------------------------------------------
 
@@ -198,16 +198,6 @@ CREATE TABLE `record_parkings` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data untuk tabel `record_parkings`
---
-
-INSERT INTO `record_parkings` (`id`, `status`, `code_park`, `nopol`, `timein`, `timeout`, `total_bayar`, `paymentmethod_id`, `path_qr`, `path_barcode`, `created_at`, `updated_at`) VALUES
-(1, 1, 'PRK-B5031TJN-XQQ-202208281212', 'B5031TJN', '2022-08-28 12:12:42', '2022-08-28 13:34:48', '6000', '1', NULL, NULL, NULL, '2022-08-28 06:34:54'),
-(2, 0, 'PRK-B5031TJNS-3OW-202208281217', 'B5031TJNS', '2022-08-28 12:17:29', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, 0, 'PRK-B30812TWN-9GD-202208281218', 'B30812TWN', '2022-08-28 12:18:01', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 0, 'PRK-A5012WSN-BXB-202208281219', 'A5012WSN', '2022-08-28 12:19:37', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -227,8 +217,8 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `guard_name`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'web', '2022-08-28 05:12:38', '2022-08-28 05:12:38'),
-(2, 'staff', 'web', '2022-08-28 05:12:38', '2022-08-28 05:12:38');
+(1, 'admin', 'web', '2022-08-28 23:59:35', '2022-08-28 23:59:35'),
+(2, 'staff', 'web', '2022-08-28 23:59:35', '2022-08-28 23:59:35');
 
 -- --------------------------------------------------------
 
@@ -263,8 +253,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Petugas Parkir', 'staff@xylo.co.id', NULL, '$2y$10$OGKXZps0U/qqwynXT/2ZsOPeBHLS.HFDkNSrFtw55bNKZqmx2xbB.', NULL, '2022-08-28 05:12:38', '2022-08-28 05:12:38'),
-(2, 'Administrator', 'admin@xylo.co.id', NULL, '$2y$10$frXz.KQqo/vsrTxpkv0gguzZEiZLBy/gmvQCnSjDiyQfyDy2JdmGC', NULL, '2022-08-28 05:12:38', '2022-08-28 05:12:38');
+(1, 'Petugas Parkir', 'staff@xylo.co.id', NULL, '$2y$10$.rzoNBxPkqmHLeo4t6pP7eLp09UwSoNoXPL07u3DSiYUYCiQ9WQt2', NULL, '2022-08-28 23:59:35', '2022-08-28 23:59:35'),
+(2, 'Administrator', 'admin@xylo.co.id', NULL, '$2y$10$9p1SKcj54wtfFscmBaS5t.D.0aTuRyPqKqo8eBruLnLX.Utq6hfva', NULL, '2022-08-28 23:59:35', '2022-08-28 23:59:35');
 
 --
 -- Indexes for dumped tables
@@ -335,8 +325,7 @@ ALTER TABLE `personal_access_tokens`
 --
 ALTER TABLE `record_parkings`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `record_parkings_code_park_unique` (`code_park`),
-  ADD UNIQUE KEY `record_parkings_nopol_unique` (`nopol`);
+  ADD UNIQUE KEY `record_parkings_code_park_unique` (`code_park`);
 
 --
 -- Indeks untuk tabel `roles`
@@ -403,7 +392,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT untuk tabel `record_parkings`
 --
 ALTER TABLE `record_parkings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `roles`
