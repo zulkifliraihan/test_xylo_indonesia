@@ -104,7 +104,7 @@ class RecordParkingService implements RecordParkingInterface {
 
         $searchNopol = $this->recordParking->where('nopol', $nopol)->first();
 
-        if ($searchNopol != null) {
+        if ($searchNopol != null && $searchNopol->status == 1) {
             $dataReturn['statusInterface'] = 'failed';
             $dataReturn['messageInterface'] = 'Nomor Polisi Kendaraan is exist!';
             return $dataReturn;

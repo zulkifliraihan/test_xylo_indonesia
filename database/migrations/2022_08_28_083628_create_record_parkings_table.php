@@ -17,7 +17,7 @@ class CreateRecordParkingsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('status');
             $table->string('code_park')->unique();
-            $table->string('nopol')->unique();
+            $table->string('nopol');
             $table->dateTime('timein');
             $table->dateTime('timeout')->nullable();
             $table->string('total_bayar')->nullable();
