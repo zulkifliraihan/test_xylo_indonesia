@@ -441,7 +441,6 @@
 
                     Swal.close();
 
-
                 },
                 error: (data) => {
                     if (data.responseJSON.status == "failed" && data.responseJSON.response == "failed-validation") {
