@@ -64,7 +64,7 @@ class LoginController extends Controller
                     $loginInterface['dataInterface']->route,
                     $loginInterface['dataInterface']->message
                 );
-            }
+            }   
         }
         catch (\Throwable $th) {
             return $this->errorCode();

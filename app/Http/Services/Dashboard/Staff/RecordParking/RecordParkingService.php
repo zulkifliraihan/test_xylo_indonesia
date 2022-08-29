@@ -178,6 +178,11 @@ class RecordParkingService implements RecordParkingInterface {
 
         }
 
+        if ($dataRecordParking->status == 1) {
+            $dataReturn['statusInterface'] = 'failed';
+            $dataReturn['messageInterface'] = 'Data Parking is already pay for the parking!';
+            return $dataReturn;
+        }
 
         $timeOut = new DateTime($this->dateNow);
         $timmeIN = new DateTime($dataRecordParking->timein);
